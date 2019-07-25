@@ -1,0 +1,35 @@
+
+<form [formGroup]="form" #f (ngSubmit)="createProduct()">
+    <div class="form-group">
+      <label for="prodName1">Name</label>
+      <input class="form-control" style="width:70%" 
+             type="text" name="prodName1" id="prodName1"
+             formControlName="Name">
+    </div>
+    <div class="form-group">
+        <label for="prodid1">ProdId</label>
+        <input class="form-control" type="number" name="prodid1" id="prodid1"
+        formControlName="Id">
+    </div>
+    <div class="form-group">
+        <label for="prodPrice">Price</label>
+        <input class="form-control" type="number" name="prodPrice" id="prodPrice"
+        formControlName="Price">
+    </div>
+    <div class="form-group">
+          <label for="prodCategory">Category</label>
+          <input class="form-control" type="text" name="prodCategory" id="prodCategory"
+          formControlName="Category">
+    </div>
+        
+    <button class="btn btn-primary"> submit </button>
+</form>
+
+<br>
+
+<div class="alert alert-danger">
+<div *ngIf="form.get('name')?.touched && form.get('name').errors.required">Product Name is Required</div>
+<div *ngIf="form.get('id')?.touched && form.get('id').errors.required">Product ID is Required</div>
+<div *ngIf="form.get('price')?.touched && form.get('price').errors.required">Price is Required</div>
+<div *ngIf="form.get('category')?.touched && form.get('category').errors.required">category is Required</div>
+</div>

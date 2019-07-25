@@ -1,0 +1,31 @@
+<h1> Manage Products Page</h1>
+
+<div>
+    <ul>
+      <li *ngFor="let product of productListsCollection$ | async; index as i">
+        {{product.Price}}     {{product.Id}}     {{product.Name}}     {{product.Category}} 
+        <button class="btn btn-primary" (click)="updateProduct(product,i)">Update</button>
+        <button class="btn btn-primary" (click)="removeProduct(product,i)">Remove</button>
+        <br>
+      </li>
+    </ul>
+  </div>
+
+
+  <h1>Product3 is below</h1>
+  <ul class="list-group">
+    <li class="list-group-item"> 
+        {{product3?.Name}}  {{product3?.Id}}  {{product3?.Price}}  {{product3?.Category}}
+
+     
+    </li>
+  </ul>
+<p>
+
+    {{(productObservable$ | async)?.Name}}  {{(productObservable$ | async)?.Id}}  {{(productObservable$ | async )?.Price}}  {{(productObservable$ | async )?.Category}}
+</p>
+        
+  
+        
+     
+  

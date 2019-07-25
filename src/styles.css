@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+Imported bootstrap in styles Array in the angular.json file
+*/
+
+body
+{
+padding : 20px;
+}
